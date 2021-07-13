@@ -4,8 +4,9 @@
 }
 
 .game {
-  background-image: url(./img/background.jfif);
+  background-image: url(./img/bg.jfif);
   background-repeat: no-repeat;
+  background-position: center;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -71,6 +72,9 @@
   color: white;
   font-size: 80px;
   cursor: none;
+  transition: color 100ms ease-in;
+  z-index: 100;
+  opacity: 0.9;
 }
 
 .minutes {
@@ -82,4 +86,47 @@
   color: rgb(122, 212, 70);
   font-family: "Tourney", cursive;
   margin-right: 10px;
+}
+
+.pop_up {
+  position: absolute;
+  font-size: 100px;
+  font-family: "Tourney", cursive;
+  color: wheat;
+  letter-spacing: 0.05em;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+.mob {
+  width: 150px;
+  height: 150px;
+  animation-name: changeImage;
+  animation-duration: 1000ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(1, 0, 0, 1);
+}
+@keyframes changeImage {
+  0% {
+    background-image: url(./img/move/move.0.png);
+  }
+  20% {
+    background-image: url(./img/move/move.1.png);
+  }
+  40% {
+    background-image: url(./img/move/move.2.png);
+  }
+  60% {
+    background-image: url(./img/move/move.3.png);
+  }
+  80% {
+    background-image: url(./img/move/move.4.png);
+  }
+  100% {
+    background-image: url(./img/move/move.5.png);
+    transform: translate(-100px, 100px);
+  }
 }
