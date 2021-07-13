@@ -15,16 +15,16 @@ document.addEventListener('mousemove',handlerTarget);
 document.addEventListener('click',handlerClick);
 
 updateBulletText(bulletCount);
-popUpToggle();
-setTimeout(()=>{
+initGame();
+
+function start(){
     initGame();
-},1000);
+    moveMob();
+}
 
 function initGame(){
-    popUpToggle();
-    startTimer();
     const x1=window.innerWidth-90;
-    const y1=window.innerHeight-190;
+    const y1=window.innerHeight-90;
     const imgPath='./img/move/move.0.png';
     for(let i=0;i<mobCount;i++){
         const item=document.createElement('div');
@@ -33,25 +33,13 @@ function initGame(){
         item.style.backgroundRepeat='no-repeat';
         item.style.position='absolute';
         const x=randomNumber(0,x1);
-        const y=randomNumber(100,y1);
+        const y=randomNumber(0,y1);
         item.style.left=`${x}px`;
         item.style.top=`${y}px`;
-        setItemClass(item, x<window.innerWidth/2 ? 'left':'right');
         field.appendChild(item);
     }
 }
 
-function setItemClass(item,direction){
-    item.classList.add(direction);
-}
-
-function popUpToggle(){
-    if(popUp.style.opacity=='1'){
-        popUp.style.opacity='0'; 
-    }else{
-        popUp.style.opacity='1';
-    }
-}
 
 function randomNumber(min,max){
     return Math.random()*(max-min)+min;
@@ -72,7 +60,8 @@ function soundShot(){
 }
 
 function shotWhere(point){
-    if(point.className=='mob left' || point.className=='mob right'){
+    console.log(point);
+    if(point.className=='mob'){
         killMob(point);
     }
 }
@@ -80,7 +69,7 @@ function shotWhere(point){
 function cursorEffect(event){
     const x=event.clientX-40;
     const y=event.clientY-50;
-    target.style.transform=`translate(${x}px,${y}px) scale(1.5)`;
+    target.style.transform=`translate(${x}px,${y}px) scale(1.1)`;
     target.style.color='tomato';
 }
 
@@ -98,7 +87,7 @@ function killMob(point){
 function endGame(message){
     stopTimer();
     popUp.innerText=`${message}`;
-    popUpToggle();
+    popUp.style.display='block';
 }
 
 function handlerTarget(event){
@@ -114,7 +103,7 @@ function startTimer(){
     timer=setInterval(function(){
         if(remainingTime<=0){
             stopTimer();
-            endGame('Time Over');
+            endGame(Fail);
             return;
         }
         updateTimeText(--remainingTime);

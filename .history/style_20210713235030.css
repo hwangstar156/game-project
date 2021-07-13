@@ -11,7 +11,6 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow: visible;
 }
 
 .ui {
@@ -72,10 +71,10 @@
   position: absolute;
   color: white;
   font-size: 80px;
-  transition: color 200ms ease-in;
-  z-index: 0;
-  opacity: 0.9;
   cursor: none;
+  transition: color 100ms ease-in;
+  z-index: 100;
+  opacity: 0.9;
 }
 
 .minutes {
@@ -98,119 +97,38 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  transition: opacity 1000ms ease-in;
   opacity: 0;
-  z-index: 0;
 }
 
 .mob {
   width: 150px;
   height: 150px;
-}
-
-.left {
-  animation-name: rightMove;
+  animation-name: changeImage;
   animation-duration: 1000ms;
   animation-iteration-count: infinite;
   animation-direction: alternate;
   animation-timing-function: cubic-bezier(1, 0, 0, 1);
 }
-
-.right {
-  animation-name: leftMove;
-  animation-duration: 1000ms;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-timing-function: cubic-bezier(1, 0, 0, 1);
-}
-
-@keyframes rightMove {
+@keyframes changeImage {
   0% {
-    transform: translate(0, 0);
     background-image: url(./img/move/move.0.png);
   }
-  10% {
-    transform: translate(25px, -15px);
-  }
   20% {
-    transform: translate(50px, -30px);
     background-image: url(./img/move/move.1.png);
   }
-  30% {
-    transform: translate(75px, -45px);
-  }
   40% {
-    transform: translate(100px, -60px);
     background-image: url(./img/move/move.2.png);
   }
-  50% {
-    transform: translate(125px, -75px);
-  }
   60% {
-    transform: translate(150px, -60px);
     background-image: url(./img/move/move.3.png);
   }
-  70% {
-    transform: translate(175px, -45px);
-  }
   80% {
-    transform: translate(200px, -30px);
     background-image: url(./img/move/move.4.png);
   }
-  90% {
-    transform: translate(225px, -15px);
-  }
   100% {
-    transform: translate(250px, 0);
     background-image: url(./img/move/move.5.png);
+    transform: translate(-100px, 100px);
   }
-}
-
-@keyframes leftMove {
-  0% {
-    transform: translate(0, 0);
-    background-image: url(./img/move/move.0.png);
-  }
-  10% {
-    transform: translate(-25px, -15px);
-  }
-  20% {
-    transform: translate(-50px, -30px);
-    background-image: url(./img/move/move.1.png);
-  }
-  30% {
-    transform: translate(-75px, -45px);
-  }
-  40% {
-    transform: translate(-100px, -60px);
-    background-image: url(./img/move/move.2.png);
-  }
-  50% {
-    transform: translate(-125px, -75px);
-  }
-  60% {
-    transform: translate(-150px, -60px);
-    background-image: url(./img/move/move.3.png);
-  }
-  70% {
-    transform: translate(-175px, -45px);
-  }
-  80% {
-    transform: translate(-200px, -30px);
-    background-image: url(./img/move/move.4.png);
-  }
-  90% {
-    transform: translate(-225px, -15px);
-  }
-  100% {
-    transform: translate(-250px, 0);
-    background-image: url(./img/move/move.5.png);
-  }
-}
-
-.died {
-  animation-name: diedMob;
-  animation-duration: 700ms;
 }
 
 @keyframes diedMob {
@@ -240,9 +158,6 @@
   }
   80% {
     background-image: url(./img/die/9309118.img.die1.8.png);
-  }
-  90% {
-    background-image: url(./img/die/9309118.img.die1.9.png);
   }
   100% {
     background-image: url(./img/die/9309118.img.die1.9.png);

@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.game {
+  background-image: url(./img/bg.jfif);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.ui {
+  background-color: rgba(43, 42, 42, 0.5);
+  box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.inner_ui {
+  margin: 5px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  background-color: rgba(10, 10, 10, 0.5);
+}
+
+.game_timer {
+  display: flex;
+  margin: 50px auto 0px auto;
+  height: 80px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: white;
+}
+
+.timer_text {
+  margin-left: 5px;
+  margin-top: 5px;
+  width: 125px;
+  padding: 4px;
+}
+
+.timer_time {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 250px;
+}
+
+.game_bullet {
+  position: absolute;
+  display: flex;
+  height: 80px;
+  margin: auto;
+  right: 30px;
+  bottom: 30px;
+}
+.bullet_img {
+  font-size: 50px;
+  width: 60px;
+}
+
+.bullet_count {
+  width: 120px;
+  margin-top: 10px;
+}
+
+.target {
+  position: absolute;
+  color: white;
+  font-size: 80px;
+  cursor: none;
+  transition: color 100ms ease-in;
+  z-index: 100;
+  opacity: 0.9;
+}
+
+.minutes {
+  margin-right: 40px;
+}
+
+.number {
+  font-size: 50px;
+  color: rgb(122, 212, 70);
+  font-family: "Tourney", cursive;
+  margin-right: 10px;
+}
+
+.pop_up {
+  position: absolute;
+  font-size: 100px;
+  font-family: "Tourney", cursive;
+  color: wheat;
+  letter-spacing: 0.05em;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+.mob {
+  width: 150px;
+  height: 150px;
+  animation-name: changeImage;
+  animation-duration: 1000ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(1, 0, 0, 1);
+}
+@keyframes changeImage {
+  0% {
+    background-image: url(./img/move/move.0.png);
+  }
+  20% {
+    background-image: url(./img/move/move.1.png);
+  }
+  40% {
+    background-image: url(./img/move/move.2.png);
+  }
+  60% {
+    background-image: url(./img/move/move.3.png);
+  }
+  80% {
+    background-image: url(./img/move/move.4.png);
+  }
+  100% {
+    background-image: url(./img/move/move.5.png);
+    transform: translate(-100px, 100px);
+  }
+}
+
+@keyframes diedMob {
+  0% {
+    background-image: url(./img/move/move.0.png);
+  }
+  10% {
+    background-image: url(./img/die/9309118.img.die1.1.png);
+  }
+  20% {
+  }
+  20% {
+  }
+  20% {
+  }
+  20% {
+  }
+  20% {
+  }
+  20% {
+  }
+  20% {
+  }
+  20% {
+  }
+  20% {
+  }
+}

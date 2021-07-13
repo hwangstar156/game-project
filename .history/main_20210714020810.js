@@ -80,7 +80,7 @@ function shotWhere(point){
 function cursorEffect(event){
     const x=event.clientX-40;
     const y=event.clientY-50;
-    target.style.transform=`translate(${x}px,${y}px) scale(1.5)`;
+    target.style.transform=`translate(${x}px,${y}px) scale(1.1)`;
     target.style.color='tomato';
 }
 

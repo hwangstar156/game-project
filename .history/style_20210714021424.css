@@ -75,7 +75,6 @@
   transition: color 200ms ease-in;
   z-index: 0;
   opacity: 0.9;
-  cursor: none;
 }
 
 .minutes {
@@ -100,7 +99,6 @@
   transform: translate(-50%, -50%);
   transition: opacity 1000ms ease-in;
   opacity: 0;
-  z-index: 0;
 }
 
 .mob {

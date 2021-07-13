@@ -72,10 +72,9 @@
   position: absolute;
   color: white;
   font-size: 80px;
-  transition: color 200ms ease-in;
+  transition: color 100ms ease-in;
   z-index: 0;
   opacity: 0.9;
-  cursor: none;
 }
 
 .minutes {
@@ -100,110 +99,87 @@
   transform: translate(-50%, -50%);
   transition: opacity 1000ms ease-in;
   opacity: 0;
-  z-index: 0;
 }
 
 .mob {
   width: 150px;
   height: 150px;
+  animation-name: changeImage;
+  animation-duration: 1000ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(1, 0, 0, 1);
 }
 
-.left {
+#left {
   animation-name: rightMove;
   animation-duration: 1000ms;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-  animation-timing-function: cubic-bezier(1, 0, 0, 1);
+  animation-timing-function: ease;
 }
 
-.right {
-  animation-name: leftMove;
-  animation-duration: 1000ms;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-timing-function: cubic-bezier(1, 0, 0, 1);
+#right {
 }
 
 @keyframes rightMove {
   0% {
     transform: translate(0, 0);
-    background-image: url(./img/move/move.0.png);
-  }
-  10% {
-    transform: translate(25px, -15px);
   }
   20% {
     transform: translate(50px, -30px);
-    background-image: url(./img/move/move.1.png);
-  }
-  30% {
-    transform: translate(75px, -45px);
   }
   40% {
-    transform: translate(100px, -60px);
-    background-image: url(./img/move/move.2.png);
-  }
-  50% {
-    transform: translate(125px, -75px);
+    transform: translate(50px, -30px);
   }
   60% {
-    transform: translate(150px, -60px);
-    background-image: url(./img/move/move.3.png);
-  }
-  70% {
-    transform: translate(175px, -45px);
+    transform: translate(50px, 0);
   }
   80% {
-    transform: translate(200px, -30px);
-    background-image: url(./img/move/move.4.png);
-  }
-  90% {
-    transform: translate(225px, -15px);
+    transform: translate(50px, 30px);
   }
   100% {
-    transform: translate(250px, 0);
-    background-image: url(./img/move/move.5.png);
+    transform: translate(50px, 30px);
   }
 }
 
 @keyframes leftMove {
   0% {
     transform: translate(0, 0);
-    background-image: url(./img/move/move.0.png);
-  }
-  10% {
-    transform: translate(-25px, -15px);
   }
   20% {
     transform: translate(-50px, -30px);
-    background-image: url(./img/move/move.1.png);
-  }
-  30% {
-    transform: translate(-75px, -45px);
   }
   40% {
-    transform: translate(-100px, -60px);
-    background-image: url(./img/move/move.2.png);
-  }
-  50% {
-    transform: translate(-125px, -75px);
+    transform: translate(-50px, -30px);
   }
   60% {
-    transform: translate(-150px, -60px);
-    background-image: url(./img/move/move.3.png);
-  }
-  70% {
-    transform: translate(-175px, -45px);
+    transform: translate(-50px, 0);
   }
   80% {
-    transform: translate(-200px, -30px);
-    background-image: url(./img/move/move.4.png);
-  }
-  90% {
-    transform: translate(-225px, -15px);
+    transform: translate(-50px, 30px);
   }
   100% {
-    transform: translate(-250px, 0);
+    transform: translate(-50px, 30px);
+  }
+}
+@keyframes changeImage {
+  0% {
+    background-image: url(./img/move/move.0.png);
+  }
+  20% {
+    background-image: url(./img/move/move.1.png);
+  }
+  40% {
+    background-image: url(./img/move/move.2.png);
+  }
+  60% {
+    background-image: url(./img/move/move.3.png);
+  }
+  80% {
+    background-image: url(./img/move/move.4.png);
+  }
+  100% {
     background-image: url(./img/move/move.5.png);
   }
 }
@@ -212,7 +188,6 @@
   animation-name: diedMob;
   animation-duration: 700ms;
 }
-
 @keyframes diedMob {
   0% {
     background-image: url(./img/move/move.0.png);
