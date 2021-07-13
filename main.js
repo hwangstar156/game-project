@@ -1,4 +1,7 @@
-const gameTimer=document.querySelector('.timer_time');
+'use strict';
+
+import * as sound from './background.js';
+
 const minuteTime=document.querySelector('#minute');
 const secondTime=document.querySelector('#second');
 const target=document.querySelector('.target');
@@ -6,21 +9,28 @@ const bullet=document.querySelector('.bullet_count');
 const popUp=document.querySelector('.pop_up');
 const field=document.querySelector('.game');
 const shotSound=new Audio('./sound/shotgun1+가까이+단발.wav');
-const limitTime=30;
+const limitTime=20;
 let timer;
-let bulletCount=30;
-let mobCount=12;
+let bulletCount=20;
+let mobCount=10;
+let started=false;
 
 document.addEventListener('mousemove',handlerTarget);
 document.addEventListener('click',handlerClick);
-
 updateBulletText(bulletCount);
 popUpToggle();
-setTimeout(()=>{
-    initGame();
-},1000);
+popUp.addEventListener('click',()=>{
+    if(started){
+        return;
+    }
+    started=true;
+    setTimeout(()=>{
+        initGame();
+    },1000);
+})
 
 function initGame(){
+    sound.playSound();
     popUpToggle();
     startTimer();
     const x1=window.innerWidth-90;
@@ -58,6 +68,9 @@ function randomNumber(min,max){
 }
 
 function handlerClick(event){
+    if(!started){
+        return;
+    }
     const point=event.target;
     handlerBullet(--bulletCount);
     cursorEffect(event);
@@ -72,6 +85,7 @@ function soundShot(){
 }
 
 function shotWhere(point){
+    console.log(point);
     if(point.className=='mob left' || point.className=='mob right'){
         killMob(point);
     }
@@ -97,6 +111,7 @@ function killMob(point){
 
 function endGame(message){
     stopTimer();
+    sound.stopSound();
     popUp.innerText=`${message}`;
     popUpToggle();
 }
