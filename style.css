@@ -112,7 +112,7 @@
   animation-duration: 400ms;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-  animation-timing-function: ease;
+  animation-timing-function: ease-out;
 }
 
 .right {
@@ -120,7 +120,7 @@
   animation-duration: 400ms;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-  animation-timing-function: ease;
+  animation-timing-function: ease-in;
 }
 
 @keyframes rightMove {
