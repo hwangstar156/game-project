@@ -8,10 +8,10 @@ const bullet=document.querySelector('.bullet_count');
 const popUp=document.querySelector('.pop_up');
 const field=document.querySelector('.game');
 const shotSound=new Audio('./sound/shotgun1+가까이+단발.wav');
-const limitTime=80;
+const limitTime=20;
 
 let timer;
-let bulletCount=50;
+let bulletCount=20;
 let mobCount=20;
 let started=false;
 
