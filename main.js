@@ -8,6 +8,7 @@ const bullet=document.querySelector('.bullet_count');
 const popUp=document.querySelector('.pop_up');
 const field=document.querySelector('.game');
 const shotSound=new Audio('./sound/shotgun1+가까이+단발.wav');
+const diedSound=new Audio('./sound/mobdied.wav');
 const limitTime=80;
 
 let timer;
@@ -76,12 +77,19 @@ function handlerClick(event){
     cursorEffect(event);
     shotWhere(point);
     soundShot();
+
 }
 
 function soundShot(){
+
     shotSound.currentTime=0;
-    shotSound.volume=0.5;
+    shotSound.volume=0.3;
     shotSound.play();
+}
+
+function killSound(){
+    diedSound.currentTime=0.4;
+    diedSound.play();
 }
 
 function shotWhere(point){
@@ -100,6 +108,7 @@ function cursorEffect(event){
 
 function killMob(point){
     mobCount--;
+    killSound();
     point.classList.add('died');
     setTimeout(()=>{
         point.remove();
