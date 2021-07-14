@@ -109,7 +109,7 @@
 
 .left {
   animation-name: rightMove;
-  animation-duration: 1000ms;
+  animation-duration: 400ms;
   animation-iteration-count: infinite;
   animation-direction: alternate;
   animation-timing-function: ease;
@@ -117,7 +117,7 @@
 
 .right {
   animation-name: leftMove;
-  animation-duration: 1000ms;
+  animation-duration: 400ms;
   animation-iteration-count: infinite;
   animation-direction: alternate;
   animation-timing-function: ease;

@@ -12,7 +12,7 @@ const diedSound=new Audio('./sound/mobdied.wav');
 const limitTime=80;
 
 let timer;
-let bulletCount=50;
+let bulletCount=60;
 let mobCount=20;
 let started=false;
 
