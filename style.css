@@ -98,8 +98,8 @@
   top: 50%;
   transform: translate(-50%, -50%);
   transition: opacity 1000ms ease-in;
-  display: none;
   z-index: 0;
+  display: block;
 }
 
 .mob {
@@ -109,18 +109,18 @@
 
 .left {
   animation-name: rightMove;
-  animation-duration: 400ms;
+  animation-duration: 800ms;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-  animation-timing-function: ease-out;
+  animation-timing-function: ease;
 }
 
 .right {
   animation-name: leftMove;
-  animation-duration: 400ms;
+  animation-duration: 800ms;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-  animation-timing-function: ease-in;
+  animation-timing-function: ease;
 }
 
 @keyframes rightMove {
